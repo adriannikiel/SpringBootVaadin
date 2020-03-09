@@ -1,10 +1,20 @@
 package pl.anikiel.rectangleapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RectangularReader {
+
+    private RectangleRepo rectangleRepo;
+
+    @Autowired
+    public RectangularReader(RectangleRepo rectangleRepo) {
+        this.rectangleRepo = rectangleRepo;
+    }
 
     @Value("${siteA1}")
     private int siteA1;
