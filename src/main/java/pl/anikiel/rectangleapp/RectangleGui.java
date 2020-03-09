@@ -8,6 +8,8 @@ import com.vaadin.flow.router.Route;
 @Route
 public class RectangleGui extends VerticalLayout {
 
+    private RectangleRepo rectangleRepo;
+
     private TextField textFieldHeight;
     private TextField textFieldWidth;
     private Button button;
