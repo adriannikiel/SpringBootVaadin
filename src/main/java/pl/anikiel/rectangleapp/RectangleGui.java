@@ -13,12 +13,20 @@ public class RectangleGui extends VerticalLayout {
     private Button button;
 
     public RectangleGui() {
-         textFieldHeight = new TextField("Podaj wysokość");
-         textFieldWidth = new TextField("Podaj szerokość");
-         button = new Button("Dodaj!");
+        textFieldHeight = new TextField("Podaj wysokość");
+        textFieldWidth = new TextField("Podaj szerokość");
+        button = new Button("Dodaj!");
 
-         add(textFieldHeight);
-         add(textFieldWidth);
-         add(button);
+        button.addClickListener(buttonClickEvent -> addRectangle());
+
+        add(textFieldHeight);
+        add(textFieldWidth);
+        add(button);
+    }
+
+    public void addRectangle() {
+        Rectangle rectangle = new Rectangle();
+        rectangle.setHeight(Integer.parseInt(textFieldHeight.getValue()));
+        rectangle.setWidth(Integer.parseInt(textFieldWidth.getValue()));
     }
 }
