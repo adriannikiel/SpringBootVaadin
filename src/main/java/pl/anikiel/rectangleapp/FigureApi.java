@@ -1,7 +1,21 @@
 package pl.anikiel.rectangleapp;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FigureApi {
+
+    @GetMapping("/calculate")
+    public int calcutateCircuit(@RequestParam String figure, @RequestParam Integer siteA, @RequestParam Integer siteB, @RequestParam(required = false) Integer siteC) {
+        if (figure.equalsIgnoreCase("RECTANGLE")) {
+            return 2 * siteA + 2 * siteB;
+        }
+        else if (figure.equalsIgnoreCase("TRIANGLE")) {
+            return siteA + siteB + siteC;
+        }
+
+        return -1;
+    }
 }
