@@ -30,5 +30,11 @@ public class RectangularReader {
     @Value("${siteB4}")
     private int siteB4;
 
-    
+    public void addRectangles() {
+        Rectangle rectangle1 = new Rectangle(siteA1, siteB1);
+        Rectangle rectangle2 = new Rectangle(siteA2, siteB2);
+        Rectangle rectangle3 = new Rectangle(siteA3, siteB3);
+        Rectangle rectangle4 = new Rectangle(siteA4, siteB4);
+    }
+
 }
