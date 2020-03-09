@@ -25,7 +25,9 @@ public class RectangleSizeGui extends VerticalLayout {
         textAreaRectangles = new TextArea("Wynik");
         buttonBigger = new Button("Pokaz większe");
         buttonSmaller = new Button("Pokaz mniejsze");
-        textAreaRectangles.setValue(rectangleRepo.getBigRectangles().toString());
+
+        buttonBigger.addClickListener(buttonClickEvent -> textAreaRectangles.setValue(rectangleRepo.getBigRectangles(Integer.parseInt(textFieldSize.getValue())).toString()));
+        buttonSmaller.addClickListener(buttonClickEvent -> textAreaRectangles.setValue(rectangleRepo.getSmallRectangles(Integer.parseInt(textFieldSize.getValue())).toString()));
 
         add(textFieldSize);
         add(buttonBigger);
