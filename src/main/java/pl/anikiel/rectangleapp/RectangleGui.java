@@ -33,5 +33,6 @@ public class RectangleGui extends VerticalLayout {
         Rectangle rectangle = new Rectangle();
         rectangle.setHeight(Integer.parseInt(textFieldHeight.getValue()));
         rectangle.setWidth(Integer.parseInt(textFieldWidth.getValue()));
+        rectangleRepo.save(rectangle);
     }
 }
